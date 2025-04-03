@@ -1,64 +1,92 @@
-## Server
+## FwdTech Server
 
-### Overview
-The backend of FwdTech, built with Node.js and Express, serves the API endpoints for managing blog posts, user interactions, and other backend logic. It connects to MongoDB Atlas for data persistence and ensures smooth integration with the React frontend.
+This is the backend server for FwdTech, a simple blog site similar to TechCrunch. It handles API requests and serves content for the frontend.
 
 ### Features
-- RESTful API with Express.js
-- MongoDB Atlas for data storage
-- Authentication and authorization (future feature)
-- CRUD operations for posts and users
-- Rate limiting and security enhancements
+- RESTful API for managing blog articles and categories.
+- MongoDB Atlas as the database.
+- Express.js as the backend framework.
+- JWT authentication for secure access.
+- Cloud storage integration for media files (to be implemented).
 
-### Project Structure
-```plaintext
+### Folder Structure
+```
 server/
-├── controllers/    # Handles request logic
-├── models/        # Mongoose schemas
-├── routes/        # Express routes
-├── middleware/    # Authentication, validation
-├── config/        # Database and environment config
-├── .env           # Environment variables
-├── server.js      # Main entry point
+│── controllers/    # Handles request logic
+│── models/         # Mongoose schemas
+│── routes/         # API route definitions
+│── middleware/     # Authentication and other middleware
+│── config/         # Configuration files
+│── utils/          # Utility functions
+│── .env            # Environment variables (not committed)
+│── index.js        # Entry point
+│── package.json    # Dependencies and scripts
 ```
 
 ### Installation
-```bash
-cd server
+
+```sh
+git clone https://github.com/sssairohit/fwdtech.git
+cd fwdtech/server
 npm install
 ```
 
 ### Environment Variables
-Create a `.env` file in the `server/` directory with the following:
-```plaintext
+Create a `.env` file in the root of the `server/` directory and configure the following:
+
+```env
 PORT=5001
-MONGO_URI=your_mongodb_atlas_url
-JWT_SECRET=your_secret_key
+JWT_SECRET=your_jwt_secret
 ```
 
 ### Running the Server
-```bash
+
+```sh
 npm start
 ```
 
-For development with hot-reloading:
-```bash
-npm run dev
+### API Endpoints
+
+#### Articles
+- `GET /api/articles` - Fetch all articles
+- `GET /api/articles/:id` - Fetch a single article
+- `POST /api/articles` - Create a new article
+- `PUT /api/articles/:id` - Update an article
+- `DELETE /api/articles/:id` - Delete an article
+
+#### Users
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get authenticated user details
+
+### CMS Design
+The CMS (Content Management System) is structured as follows:
+
+- **Admin Panel**: Admins can create, edit, and delete content.
+- **Article Management**: CRUD functionality for blog posts.
+- **Media Storage**: Cloud integration for images and videos (planned feature).
+- **Dashboard**: Overview of published articles and content performance.
+
+### MongoDB Structure
+#### Articles Collection
+```json
+{
+  "_id": ObjectId,
+  "title": String,
+  "content": String,
+  "author": String,
+  "createdAt": Date,
+  "updatedAt": Date
+}
 ```
 
-### API Endpoints
-- `GET /api/posts` - Fetch all blog posts
-- `POST /api/posts` - Create a new post
-- `GET /api/posts/:id` - Fetch a single post
-- `PUT /api/posts/:id` - Update a post
-- `DELETE /api/posts/:id` - Delete a post
-
-### Deployment
-1. Set up environment variables on the hosting provider.
-2. Build and deploy using a cloud platform like Render, Vercel (for frontend), or AWS.
-3. Use a process manager like PM2 for production.
-
 ### Future Enhancements
-- WebSocket integration for real-time updates
-- User authentication with JWT or OAuth
-- Admin panel for content moderation
+- Add support for third-party storage (AWS S3, Cloudinary, etc.).
+- Improve article search and filtering.
+- Implement comment and like system.
+
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+### License
+This project is licensed under the MIT License.
