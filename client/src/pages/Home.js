@@ -1,8 +1,12 @@
 import React from "react";
 
 const Home = () => {
-    return <h1>Welcome to FwdTech</h1>;
-  };
-  
-  export default Home;
-  
+  return (
+    <div>
+      <h2>Welcome to FwdTech</h2>
+      <p>Your source for the latest in tech news and insights.</p>
+    </div>
+  );
+};
+
+export default Home;
