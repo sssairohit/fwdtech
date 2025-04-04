@@ -1,0 +1,99 @@
+nav {
+    background-color: var(--nav-bg-color);
+    color: var(--light-text-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+    margin: 0 auto;
+    width: 85em;
+}
+
+/* Logo */
+.navLogo {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: var(--light-text-color);
+}
+
+.navLogo a {
+    text-decoration: none;
+}
+
+/* Remove bullet points */
+.navLinks {
+    display: flex;
+    gap: 1.5em;
+    list-style: none;
+    padding: 0;
+}
+
+/* Navigation links */
+.navItem {
+    text-decoration: none;
+    color: var(--light-text-color);
+    font-size: var(--nav-font-size);
+    font-weight: 500;
+    position: relative;
+    transition: color var(--transition-speed);
+}
+
+.navItem:hover {
+    color: var(--accent-color);
+}
+
+/* Underline effect */
+.navItem::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.6em; /* Increased gap slightly */
+    width: 100%;
+    height: var(--underline-height);
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-speed);
+}
+
+.navItem:hover::after {
+    transform: scaleX(1);
+}
+
+/* Icons container */
+.navIcons {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* General Button Styling */
+.navButton,
+.iconButton,
+.menuButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+    border: 1px dashed transparent; /* Initially invisible */
+    padding: 0.75em 0.8em 0.85em 0.8em; /* Ensures equal height */
+    border-radius: 9999em;
+    background: none;
+    cursor: pointer;
+    color: var(--light-text-color);
+    transition: 
+      border-color var(--transition-speed), 
+      color var(--transition-speed);
+}
+
+/* Hover Effect for All Buttons */
+.navButton:hover,
+.iconButton:hover,
+.menuButton:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
