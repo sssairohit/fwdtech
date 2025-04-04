@@ -1,0 +1,105 @@
+* {
+    font-feature-settings: var(--font-feature-settings);
+    letter-spacing: var(--letter-spacing);
+}
+
+.container {
+    display: flex;
+    gap: 2em;
+    margin: 2em auto;
+    max-width: 85em;
+  }
+  
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    flex: 1 1 60%;
+  }
+  
+  .mainContent img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* keeps consistent height regardless of image dimensions */
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  .mainContent h3 {
+    font-family: var(--font-family);
+    font-size: 1.25em;
+    line-height: 1.2em;
+    color: var(--text-color);
+  }
+
+  .mainContent p {
+    font-size: 1em;
+    line-height: 1.2em;
+  }
+  
+  .mainContent span {
+    text-transform: uppercase;
+  }
+  
+  .bulletedContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 35%;
+  }
+
+  .mainContent:hover {
+    cursor: pointer;
+  }
+
+  .mainContent:hover h3 {
+    text-decoration: underline;
+  }
+
+  .mainContent:hover img {
+    opacity: 0.9;
+    transition: opacity var(--transition-speed);
+  }
+
+  
+  .bulletedContent > div:hover {
+    cursor: pointer;
+}
+
+.bulletedContent > div:hover p {
+    text-decoration: underline;
+  }
+  
+  .bulletedContent > div:hover img {
+    opacity: 0.9;
+    transition: opacity var(--transition-speed);
+  }
+  
+  .bulletedContent div {
+    display: flex;
+    align-items: start;
+    gap: 0.5em;
+  }
+  
+  .bulletedContent img {
+    display: block;
+    width: 10em;
+    height: 6em;
+    object-fit: cover;
+    flex-shrink: 0; /* prevents shrinking */
+  }
+  
+  
+  .bulletedContent p {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.2em;
+  }
+  
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border-color, #ccc);
+    margin: 1em 0;
+  }
+  
