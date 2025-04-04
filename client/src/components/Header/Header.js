@@ -13,19 +13,22 @@ const Header = ({ main, list }) => {
         </p>
       </div>
 
-      <div className={styles.bulletedContent}>
-  {list.map((item, index) => (
-    <React.Fragment key={index}>
-      {index !== 0 && <hr className={styles.divider} />}
-      <div>
-        <img src={item.image} alt={item.title} />
-        <p>{item.title}</p>
+      <div className={styles.bulletedContentContainer}>
+        {list.map((item, index) => (
+          <React.Fragment key={index}>
+            {index !== 0 && <hr className={styles.divider} />}
+            <div>
+              <img src={item.image} alt={item.title} />
+              <div className={styles.bulletedContent}>
+                <p>{item.title}</p>
+                <p className={styles.bulletAuthor}>
+                  By {item.author.toUpperCase()}
+                </p>
+              </div>
+            </div>
+          </React.Fragment>
+        ))}
       </div>
-    </React.Fragment>
-  ))}
-</div>
-
-
     </div>
   );
 };

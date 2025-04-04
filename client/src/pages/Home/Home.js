@@ -35,26 +35,31 @@ const Home = () => {
         image: image7,
         title:
           "Carrie Coon Exited Marvel After the Studio Said ‘We're Not Going to Pay You Any More Money’ for ‘Avengers: Endgame,’ Says Husband Tracy…",
+        author: "Rachel Cohen",
       },
       {
         image: image8,
         title:
           "Ellen Pompeo Asked Taylor Swift to ‘Write Me a Check’ for Charity Despite Knowing Each Other for ‘All but 20 Minutes’; Swift Sent the ‘Biggest Check…",
+        author: "Rachel Cohen",
       },
       {
         image: image9,
         title:
           "Christopher Nolan’s ‘The Odyssey’ Is a ‘Masterpiece That Homer Himself Would Likely Be Proud Of,’ Universal Executive…",
+        author: "Rachel Cohen",
       },
       {
         image: image10,
         title:
           "Julia Roberts Gets Scorched by #MeToo Scandal in Gripping CinemaCon Trailer for Luca Guadagnino’s ‘After the Hunt’",
+        author: "Rachel Cohen",
       },
       {
         image: image11,
         title:
           "‘Wicked: For Good’ Trailer Wows CinemaCon, From Cynthia Erivo Belting ‘No Good Deed’ to Dorothy’s Arrival in Oz",
+        author: "Rachel Cohen",
       },
     ],
   };
@@ -97,6 +102,10 @@ const Home = () => {
       />
       <Category 
         categoryTitle = "Recommended For You"
+        items={recommendedItems} 
+      />
+      <Category 
+        categoryTitle = "Latest In Tech"
         items={recommendedItems} 
       />
     </div>

@@ -8,43 +8,46 @@
   flex-direction: column;
   gap: 1em;
   justify-content: space-between;
-  margin: 2em auto;
+  margin: 4em auto 2em auto;
   width: 85em;
 }
 
 .container div, h3 {
-    font-family: var(--font-family);
-    font-feature-settings: var(--font-feature-settings);
-    font-style: var(--font-style);
-    font-size: 1.25em;
-    line-height: 1.2em;
-    letter-spacing: var(--letter-spacing);
-    color: var(--text-color);
+  font-family: var(--font-family);
+  font-feature-settings: var(--font-feature-settings);
+  font-style: var(--font-style);
+  font-size: 1.25em;
+  line-height: 1.2em;
+  letter-spacing: var(--letter-spacing);
+  color: var(--text-color);
 }
 
 .itemContainer {
   display: flex;
-  gap: 1em;
+  gap: 0;
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6em;
-    width: calc(100% / 4 - 1em);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  width: calc(100% / 4 - 1em);
+  cursor: pointer;
 }
 
 .item div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
 }
 
 .item img {
   width: 100%;
   height: 6.5em;
-    object-fit: cover;
+  object-fit: cover;
   display: block;
+  transition: opacity var(--transition-speed);
+  opacity: 1;
 }
 
 .itemTitle {
@@ -53,21 +56,22 @@
   font-weight: bold;
 }
 
-.item:hover {
-    cursor: pointer;
+.item:hover .itemTitle {
+  text-decoration: underline;
 }
 
-.item:hover .itemTitle {
-    text-decoration: underline;
-  }
-  
-  .item:hover img {
-    opacity: 0.9;
-    transition: opacity var(--transition-speed);
-  }
-  
+.item:hover img {
+  opacity: 0.9;
+}
 
 .itemAuthor {
   font-size: 12px;
   color: #666;
+}
+
+.vDivider {
+  width: 1px;
+  background-color: #909090;
+  height: auto;
+  margin: 0 0.5em;
 }
