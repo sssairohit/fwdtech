@@ -1,0 +1,23 @@
+.main {
+    padding: 2rem 1rem;
+  }
+  
+  .container {
+    max-width: 85em;
+    margin: 0 auto;
+    display: flex;
+    gap: 3em;
+    align-items: flex-start;
+  }
+  
+  .article {
+    flex: 3;
+  }
+  
+  .sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  

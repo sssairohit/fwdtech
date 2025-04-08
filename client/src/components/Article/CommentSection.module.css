@@ -1,0 +1,17 @@
+.comments {
+    margin-top: 4em;
+    padding-top: 2em;
+    border-top: 1px solid #ddd;
+  }
+  
+  .comments h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  
+  .comments p {
+    color: #666;
+    font-size: 0.95em;
+  }
+  

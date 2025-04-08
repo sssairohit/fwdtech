@@ -1,0 +1,16 @@
+.header {
+    margin-bottom: 1.5em;
+  }
+  
+  .header h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    margin-top: 0.3em;
+  }
+  
+  .header p {
+    font-size: 1.1em;
+    color: var(--text-light);
+    margin-top: 0.5em;
+  }
+  
